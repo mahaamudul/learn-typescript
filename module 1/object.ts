@@ -10,7 +10,7 @@ const user: {
     firstName: string;
     middleName?: string;// optional property
     lastName: string;
-    nationality?: "bangladeshi"; // value type || literal type
+     readonly nationality?: "bangladeshi"; // value type || literal type
 } = {
     firstName:"mahamudul",
     middleName:"hasan",
@@ -18,5 +18,6 @@ const user: {
     isMarried:true,
     nationality:"bangladeshi"
 }
+// user.nationality = "bangladeshi"; // This will cause an error since it's a readonly property
 
 console.log(user);
