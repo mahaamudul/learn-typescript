@@ -8,3 +8,9 @@ export const readProduct=()=>{
     const products=fs.readFileSync(productFilePath,'utf-8');
     return JSON.parse(products)
 }
+
+
+export const insertProduct=(payload:any)=>{
+    console.log(payload);
+    fs.writeFileSync(productFilePath,JSON.stringify(payload))
+}

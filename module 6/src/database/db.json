@@ -33,5 +33,12 @@
     "price": 24.99,
     "category": "Accessories",
     "in_stock": true
+  },
+  {
+    "id": 1786866015508,
+    "name": "USB-C Charger",
+    "price": 24.99,
+    "category": "Accessories",
+    "in_stock": true
   }
 ]
