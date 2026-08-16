@@ -1,1 +1,16 @@
-[{"id":2,"name":"Smart Watch","price":89.99,"category":"Wearables","in_stock":true},{"id":3,"name":"Laptop Backpack","price":39.99,"category":"Bags","in_stock":false},{"id":4,"name":"Mechanical Keyboard","price":74.99,"category":"Computer Accessories","in_stock":true}]
+[
+  {
+    "id": 3,
+    "name": "Laptop Backpack",
+    "price": 39.99,
+    "category": "Bags",
+    "in_stock": false
+  },
+  {
+    "id": 4,
+    "name": "Mechanical Keyboard",
+    "price": 74.99,
+    "category": "Computer Accessories",
+    "in_stock": true
+  }
+]
