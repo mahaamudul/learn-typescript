@@ -3,9 +3,14 @@ import type { NextFunction, Request, Response } from "express"
 import config from '../config'
 import { pool } from '../db'
 
-const auth=()=>{
+type ROLES="admin"|"moderator"|"user";
+
+const auth=(...roles: ROLES[])=>{
     return async (req:Request,res:Response,next:NextFunction)=>{
-        const token=req.headers.authorization
+
+        console.log(roles);
+        try{
+            const token=req.headers.authorization
         
 
         if(!token){
@@ -37,7 +42,7 @@ const auth=()=>{
             })
         }
 
-        if(!user.is_active){
+        if(!user?.is_active){
             res.status(403).json({
 
                 message:"Forbidden !",
@@ -47,9 +52,22 @@ const auth=()=>{
 
         }
 
+        req.user=decoded
+
+        if(roles.length && !roles.includes(user.role)){
+            res.status(403).json({
+                success:false,
+                message:'request forbidden!'
+            })
+        }
+
         console.log(user);
 
         next();
+        }
+        catch(err){
+            next(err)
+        }
     }
 }
 
