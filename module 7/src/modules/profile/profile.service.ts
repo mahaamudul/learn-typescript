@@ -1,12 +1,13 @@
+
 import { pool } from "../../db"
 
 
 //insert a user in DB
 const createUserProfileInDB=async(payload:any)=>{
     const {user_id,bio,address,phone,gender}=payload
-    console.log(
-        user_id
-    );
+    
+    //hash the password
+    
 
     // check exits user
     const user=await pool.query(
